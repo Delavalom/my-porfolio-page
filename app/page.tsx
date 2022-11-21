@@ -5,7 +5,7 @@ import { Stack } from "./components/Stack";
 
 export default function Home() {
   return (
-    <main>
+    <main className="h-full px-10 flex flex-1 flex-col ">
       <AboutMe />
       <Stack />
       <Showcase />

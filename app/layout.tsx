@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head />
-      <body>
+      <body className='h-screen flex flex-col items-center'>
         <Navbar />
         {children}
         <Footer />
