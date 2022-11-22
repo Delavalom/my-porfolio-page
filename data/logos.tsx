@@ -1,11 +1,10 @@
 import Tailwindcss from "../assets/Tailwindcss.svg";
-import Github from "../assets/Github.svg";
-import GraphQl from "../assets/GraphQl.svg";
+import GraphQl from "../assets/GraphQL.svg";
 import Javascript from "../assets/javascript.svg";
 import NextJS from "../assets/NextJS.svg";
 import NodeJS from "../assets/node.svg";
 import TRPC from "../assets/trpc.svg";
-import Typescript from "../assets/Typescript.svg";
+import Typescript from "../assets/TypeScript.svg";
 import ReactJS from "../assets/React.svg";
 import Jest from "../assets/Jest.svg";
 import React, { FunctionComponent } from "react";

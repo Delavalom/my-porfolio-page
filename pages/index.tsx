@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <meta name="robots" content="index/follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="h-full px-10 flex flex-1 flex-col ">
+      <main className="h-full px-10 flex flex-1 flex-col gap-5 overflow-auto">
         <AboutMe />
         <Stack />
         <Showcase />

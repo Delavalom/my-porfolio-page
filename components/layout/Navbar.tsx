@@ -18,7 +18,7 @@ const links = [
 export const Navbar = () => {
   return (
     <header className="w-full h-32 px-4 flex items-center">
-      <nav className="w-10/12 mx-auto bg-slate-800 rounded-full border-[1px] border-opacity-30 border-sky-500 px-4 py-2">
+      <nav className="w-10/12 max-w-md mx-auto bg-slate-800 rounded-full border-[1px] border-opacity-30 border-sky-500 px-4 py-2">
         <ul className="flex justify-around items-center gap-3">
           {links.map(({ label, route }) => (
             <li
