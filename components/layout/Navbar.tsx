@@ -2,16 +2,16 @@ import Link from "next/link";
 
 const links = [
   {
-    label: "Home",
-    route: "/",
+    label: "Resume",
+    route: "https://drive.google.com/file/d/1VrdJVi4ie2lX9bNLBh1iGuNLdYugwRKJ/view?usp=sharing",
   },
   {
     label: "LinkedIn",
-    route: "/linkedin",
+    route: "https://www.linkedin.com/in/luis-arvelo",
   },
   {
     label: "GitHub",
-    route: "/github",
+    route: "https://github.com/Delavalom",
   },
 ];
 
