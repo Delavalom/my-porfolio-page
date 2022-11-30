@@ -4,17 +4,17 @@ import Github from "../assets/GitHub.svg";
 interface Props {
   title: string;
   tecnologies: [string, string?, string?, string?];
-  isPublic?: boolean;
+  deployLink?: string;
+  imageSrc?: string;
+  repositoryLink?: string;
 }
 
-export const Card = ({ title, tecnologies, isPublic }: Props) => {
+export const Card = ({ title, tecnologies, deployLink, imageSrc, repositoryLink }: Props) => {
   return (
     <section className="w-full h-fit max-w-sm max-h-80 flex gap-2 justify-between bg-slate-800 rounded-lg p-4 border-t shadow shadow-slate-900/40 border-slate-700 hover:shadow-sky-500/40 transition-shadow duration-500">
-      <Link href="https://inventory-tracker-dev.netlify.app" target="_blank" rel="noopener noreferrer" title="Go to site inventory-track-dev">
+      <Link href={deployLink!} target="_blank" rel="noopener noreferrer" title="Go to site inventory-track-dev">
         <figure className="w-full h-full hover:opacity-50 transition-opacity duration-500">
-          <source srcSet="https://screenshot-proxy.netlify.app/f_avif,w_336/https://d33wubrfki0l68.cloudfront.net/637a76b9e167bb000818059c/screenshot_2022-11-20-18-49-52-0000.png" type="image/avif" />
-          <source srcSet="https://screenshot-proxy.netlify.app/f_webp,w_336/https://d33wubrfki0l68.cloudfront.net/637a76b9e167bb000818059c/screenshot_2022-11-20-18-49-52-0000.png" type="image/webp" />
-          <Image className="w-full h-full" src="https://screenshot-proxy.netlify.app/f_jpg,w_336/https://d33wubrfki0l68.cloudfront.net/637a76b9e167bb000818059c/screenshot_2022-11-20-18-49-52-0000.png" alt="" width="168" height="105" loading="lazy" />
+          <Image className="w-full h-full" src={imageSrc!} alt="" width="168" height="105" loading="lazy" />
         </figure>
       </Link>
       <div className="hidden sm:flex sm:flex-col">
@@ -30,8 +30,8 @@ export const Card = ({ title, tecnologies, isPublic }: Props) => {
           ))}
         </div>
       </div>
-      {isPublic && (
-        <Link href="https://github.com/Delavalom/inventory-tracker">
+      {repositoryLink && (
+        <Link href={repositoryLink}>
           <figure>
             <Github className="text-2xl hover:text-sky-500 transition-colors duration-500" />
           </figure>
