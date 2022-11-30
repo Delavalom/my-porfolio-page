@@ -1,10 +1,11 @@
 import { Card } from "./Card";
+import gtp3 from '../assets/gpt3.png';
 
 export const Showcase = () => {
   return (
     <section className="w-full max-w-4xl mx-auto space-y-2">
       <h1 className="text-3xl font-semibold">Showcase</h1>
-      <div className="w-full flex flex-wrap">
+      <div className="w-full flex flex-wrap gap-4">
         <Card
           title="Inventory tracker"
           tecnologies={["react", "typescript", "tailwind"]}
@@ -17,7 +18,7 @@ export const Showcase = () => {
           tecnologies={["Nextjs", "OpenAI", "Typescript"]}
           deployLink={"https://gpt3-headlines-generator.vercel.app/"}
           repositoryLink={"https://github.com/Delavalom/gpt3-writer-starter/"}
-          imageSrc={"blob:https://vercel.com/8ac75b86-e482-4040-8c78-a189820117ce"}
+          imageSrc={gtp3}
         />
       </div>
     </section>
