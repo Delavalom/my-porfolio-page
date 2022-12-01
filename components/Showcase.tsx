@@ -17,7 +17,7 @@ export const Showcase = () => {
         <Card
           title="GPT-3 Headlines Generator"
           tecnologies={["Nextjs", "OpenAI", "Typescript"]}
-          deployLink={"https://gpt3-headlines-generator.vercel.app/"}
+          deployLink={"https://pitch-description-repo.vercel.app/"}
           repositoryLink={"https://github.com/Delavalom/gpt3-writer-starter/"}
           imageSrc={gtp3}
         />
