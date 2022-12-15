@@ -1,4 +1,4 @@
-import { logos } from "../data/logos";
+import { logos } from "../data";
 
 export const Stack = () => {
   return (

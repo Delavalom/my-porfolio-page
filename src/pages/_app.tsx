@@ -1,12 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Navbar } from "../components/layout/Navbar";
+import { Layout } from "components/layout/Layout";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className="h-screen flex flex-col">
-      <Navbar />
+    <Layout title="Luis Angel Arvelo">
       <Component {...pageProps} />
-    </main>
+    </Layout>
   );
 }

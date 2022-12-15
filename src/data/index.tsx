@@ -52,3 +52,9 @@ export const logos: Logos = [
     Icon: NodeJS,
   },
 ];
+
+export const builds = [
+  {
+    
+  }
+]

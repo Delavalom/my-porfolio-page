@@ -13,7 +13,7 @@ export const Showcase = () => {
     bgImage: 'gpt3.png'
   });
   return (
-    <section className="w-full max-w-4xl mx-auto space-y-2">
+    <section className="w-full max-w-4xl mx-auto space-y-2 mt-80">
       <h1 className="text-3xl font-semibold">Showcase</h1>
       <div className="w-full flex flex-wrap gap-4">
         <img src={ogImage} alt="ogimage" />
