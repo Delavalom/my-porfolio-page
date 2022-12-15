@@ -15,7 +15,7 @@ const Home: NextPage = () => {
           content="This is the portfolio of Luis Ángel Arvelo frontend developer and founding member of the 7 Street Labs team"
         />
         <meta name="robots" content="index/follow" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/src/public/favicon.ico" />
       </Head>
       <main className="h-full px-10 flex flex-1 flex-col gap-5 overflow-auto">
         <AboutMe />

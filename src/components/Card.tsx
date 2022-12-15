@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import Github from "../assets/GitHub.svg";
+import Github from "@assets/GitHub.svg";
 interface Props {
   title: string;
   tecnologies: [string, string?, string?, string?];

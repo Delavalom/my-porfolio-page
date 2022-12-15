@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['screenshot-proxy.netlify.app', 'vercel.com'],
+    domains: [
+      "screenshot-proxy.netlify.app",
+      "vercel.com",
+      "res.cloudinary.com",
+    ],
   },
   webpack(config) {
     config.module.rules.push({
