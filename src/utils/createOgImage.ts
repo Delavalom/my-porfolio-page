@@ -31,7 +31,7 @@ const createOgImage = ({
     `fl_layer_apply,g_south_west,x_40,y_40`,
 
     // PROFILE IMAGE
-    // upload your github avatar to your cloudinary account
+    // upload your github avatar to your cloudinary account with the following name
     `l_github_avatar`,
     // Transformations
     `c_thumb,g_face,r_max,w_70,h_70,q_100`,
@@ -39,7 +39,7 @@ const createOgImage = ({
     `fl_layer_apply,w_40,g_north_west,x_25,y_25`,
 
     // BG
-    `${bgImage}`,
+    `builds/${bgImage}`,
   ].join("/");
 };
 

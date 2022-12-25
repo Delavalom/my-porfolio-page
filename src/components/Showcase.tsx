@@ -1,45 +1,58 @@
-/* eslint-disable @next/next/no-img-element */
-import { Card } from "./Card";
-import gtp3 from "@assets/gpt3.png";
-import pokedex from "@assets/pokedex.png";
 import Image from "next/image";
 import createOgImage from '../utils/createOgImage'
+import Link from "next/link";
 
 
-export const Showcase = () => {
-  const ogImage = createOgImage({
+type Data = Record<'title' | "meta" | "bgImage" | "url", string>
+
+const data: Data[] = [
+  {
     title: "GPT3",
     meta: "Generate perfect pitch descriptions for GitHub repositories using AI-powered technology!",
-    bgImage: 'gpt3.png'
-  });
+    bgImage: 'gpt3.png',
+    url: 'https://github.com/Delavalom/gpt3-writer-starter'
+  },
+  {
+    title: "Pokedex",
+    meta: "Using the T3 stack new docs and cli with comprehensive Pokedex app, providing images for all 809 Pokemon if you catch one.",
+    bgImage: 'pokedex.png',
+    url: 'https://github.com/Delavalom/pokedex'
+  },
+  {
+    title: "Inventory Tracker",
+    meta: "React, Typescript simple inventory tracker. soon v2 with tRpc, database connection and .csv uploads",
+    bgImage: 'inventory_tracker.png',
+    url: 'https://github.com/Delavalom/inventory-tracker'
+  },
+  {
+    title: "Guestbook",
+    meta: "Clone the classic Lee Robinson guestbook and easily add it to your website. All the features you love, plus more!",
+    bgImage: 'guestbook.png',
+    url: 'https://guestbook-delavalom.vercel.app/'
+  },
+]
+
+export const Showcase = () => {
+  const ogImages = data.map(item => {
+    return {
+      image: createOgImage({
+        title: item.title,
+        meta: item.meta,
+        bgImage: item.bgImage
+      }),
+      url: item.url
+    }
+  })
+
   return (
-    <section className="w-full max-w-4xl mx-auto space-y-2 mt-80">
+    <section className="w-full max-w-4xl mx-auto space-y-2 mt-8 pb-20">
       <h1 className="text-3xl font-semibold">Showcase</h1>
-      <div className="w-full flex flex-wrap gap-4">
-        <img src={ogImage} alt="ogimage" />
-        <Card
-          title="Inventory tracker"
-          tecnologies={["React", "Typescript", "Tailwind"]}
-          deployLink={"https://inventory-tracker-dev.netlify.app/"}
-          repositoryLink={"https://github.com/Delavalom/inventory-tracker/"}
-          imageSrc={
-            "https://screenshot-proxy.netlify.app/f_jpg,w_336/https://d33wubrfki0l68.cloudfront.net/637a76b9e167bb000818059c/screenshot_2022-11-20-18-49-52-0000.png"
-          }
-        />
-        <Card
-          title="GPT-3 Headlines Generator"
-          tecnologies={["Nextjs", "OpenAI", "Typescript"]}
-          deployLink={"https://pitch-description-repo.vercel.app/"}
-          repositoryLink={"https://github.com/Delavalom/gpt3-writer-starter/"}
-          imageSrc={gtp3}
-        />
-        <Card
-          title="GPT-3 Headlines Generator"
-          tecnologies={["Nextjs", "PlanetScale", "Prisma"]}
-          deployLink={"https://pokedex-lovat-rho.vercel.app/"}
-          repositoryLink={"https://github.com/Delavalom/pokedex/"}
-          imageSrc={pokedex}
-        />
+      <div className="w-full flex flex-wrap gap-8">
+        {ogImages.map((ogImage, index) => (
+          <Link key={index} href={ogImage.url} className='shadow-md shadow-sky-900 hover:scale-105 transition-all duration-500'>
+            <Image src={ogImage.image} alt="ogimage" width={400} height={236} className='rounded-lg' />
+          </Link>
+        ))}
       </div>
     </section>
   );
