@@ -13,41 +13,28 @@ export default async function handler(
   response: NextApiResponse
 ) {
   const METHOD = request.method;
-  if (METHOD === "GET") {
-    try {
-      const result = await searchImages();
-    } catch (error) {
-      console.log(error);
-    }
-  }
   if (METHOD === "POST") {
     try {
-      await uploadImage(request, response);
+      return await uploadImage(request, response);
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        console.log(error.message)
+      };
+      console.log(error)
     }
   }
 }
-
-const searchImages = async () => {
-  try {
-    const result = await cloudinary.search.expression("").execute();
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 const uploadImage = async (
   request: NextApiRequest,
   response: NextApiResponse
 ) => {
   const { file } = request.body;
-  console.log(request.body)
+
   const options: UploadApiOptions = {
     public_id: "build",
     resource_type: "auto",
-    folder: "builds",
+    folder: "builds/",
     format: "svg",
   };
   try {
@@ -58,6 +45,6 @@ const uploadImage = async (
   } catch (error) {
     return response
       .status(400)
-      .json({ ok: false, message: "That pokemon doesn't exist" });
+      .json({ message: "Couldn't upload file" });
   }
 };

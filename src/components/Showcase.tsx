@@ -2,7 +2,6 @@ import Image from "next/image";
 import createOgImage from '../utils/createOgImage'
 import Link from "next/link";
 
-
 type Data = Record<'title' | "meta" | "bgImage" | "url", string>
 
 const data: Data[] = [

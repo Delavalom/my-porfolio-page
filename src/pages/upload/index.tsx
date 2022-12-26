@@ -8,35 +8,34 @@ const Upload = () => {
   const [filePreview, setFilePreview] = useState<string>("");
   const [message, setMessage] = useState("Upload build image");
 
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const files = e.target.files;
+  const handleFile = ({
+    target,
+  }: React.ChangeEvent<HTMLInputElement>): void => {
+    const { files } = target;
     if (!files) throw new Error("no funciono");
 
     setFilePreview(URL.createObjectURL(files[0]));
     setFile(files[0]);
-    setMessage('Upload build image')
+    setMessage("Upload build image");
   };
 
   const uploadFile = async () => {
-    setMessage('loading...')
-    
-    const response = await fetch('/api/cloudinary', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ file: file?.name })
-    })
-    setMessage('succesful upload')
+    setMessage("loading...");
+    // const response = await fetch('/api/cloudinary', {
+    //   method: 'POST',
+    //   headers: {'Content-Type': 'application/json'},
+    //   body: JSON.stringify({ file: file?.name})
+    // })
+    // const data = await response.json()
+    // console.log(data)
 
-    const data = await response.json()
-    if (response.ok) {
-      console.log({ data })
-    }
+    setMessage("Not yet available");
   };
 
   return (
     <section className="h-1/2 flex flex-col justify-between items-center">
       <input
-      accept="image/*"
+        accept="image/*"
         onChange={handleFile}
         type="file"
         className="block w-full text-sm text-slate-500
