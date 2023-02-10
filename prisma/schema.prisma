@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id           String     @id @default(cuid())
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  publishedAt  DateTime?
+  slug         String     @unique
+  title        String     @db.VarChar(280)
+  text         String     @db.Text
+  excerpt      String     @db.VarChar(280)
+  featureImage String?
+  reactions    Reaction[]
+  history      PostEdit[]
+  userId       String
+  @@index([publishedAt])
+}
+
+model PostEdit {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  text         String   @db.Text
+  title        String   @db.VarChar(280)
+  excerpt      String   @db.VarChar(280)
+  featureImage String?
+  post         Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId       String?
+  @@index([postId])
+}
+
+model Bookmark {
+  id            String     @id @default(cuid())
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  url           String     @unique @db.VarChar(512)
+  host          String?
+  title         String?    @db.VarChar(280)
+  image         String?    @db.VarChar(512)
+  description   String?    @db.VarChar(2048)
+  twitterHandle String?
+  faviconUrl    String?
+  reactions     Reaction[]
+  @@index([host])
+}
+
+model Stack {
+  id          String     @id @default(cuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  name        String
+  slug        String?    @unique
+  description String     @db.VarChar(280)
+  image       String
+  url         String
+  reactions   Reaction[]
+}
+
+model Reaction {
+  id         String    @id @default(cuid())
+  createdAt  DateTime  @default(now())
+  userId     String
+  bookmark   Bookmark? @relation(fields: [bookmarkId], references: [id], onDelete: Cascade)
+  post       Post?     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  stack      Stack?    @relation(fields: [stackId], references: [id], onDelete: Cascade)
+  commentId  String?
+  bookmarkId String?
+  questionId String?
+  postId     String?
+  stackId    String?
+  @@index([commentId])
+  @@index([bookmarkId])
+  @@index([questionId])
+  @@index([postId])
+  @@index([stackId])
+}
+
+model EmailSubscription {
+  id Int @id @default(autoincrement())
+  email String
+
+  @@index([email])
+}
