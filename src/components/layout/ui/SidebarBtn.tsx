@@ -4,16 +4,17 @@ import { type FC } from 'react';
 type Props = {
     Icon: FC<{ className?: string}>,
     title: string
+    onClick?: () => void
     hasExternalLink?: true
 };
 
-export const SidebarBtn: FC<Props> = ({ Icon, title, hasExternalLink }) => {
+export const SidebarBtn: FC<Props> = ({ Icon, title, onClick, hasExternalLink }) => {
 
   return (
-    <div className="flex items-center px-6 py-1 gap-4 w-full rounded-md text-zinc-900 hover:text-zinc-50 hover:bg-zinc-900">
-        <Icon className="w-5" />
+    <div onClick={onClick} className="group flex items-center pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900">
+        <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
         <span className='text-sm font-medium'>{title}</span>
-        {hasExternalLink && <ExternalLink className="ml-auto w-4" />}
+        {hasExternalLink && <ExternalLink className="ml-auto w-[13px] text-slate-500 group-hover:text-slate-50" />}
   </div>
   );
 };

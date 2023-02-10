@@ -3,7 +3,7 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <section className="w-full h-full bg-black">
+    <section className="w-full h-full bg-white">
       <Sidebar />
     </section>
   );
