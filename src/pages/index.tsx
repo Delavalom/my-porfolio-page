@@ -1,16 +1,11 @@
+import { Sidebar } from "@/components/layout/Sidebar";
 import { NextPage } from "next";
-import Head from "next/head";
-import { AboutMe } from "../components/AboutMe";
-import { Showcase } from "../components/Showcase";
-import { Stack } from "../components/Stack";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <AboutMe />
-      <Stack />
-      <Showcase />
-    </>
+    <section className="w-full h-full bg-black">
+      <Sidebar />
+    </section>
   );
 };
 
