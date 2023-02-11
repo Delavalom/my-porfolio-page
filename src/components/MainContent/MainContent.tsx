@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { type FC } from "react";
 import Balancer from "react-wrap-balancer";
 
 type Props = {};
 
-export const DetailView: FC<Props> = ({}) => {
+export const MainContent: FC<Props> = ({}) => {
   return (
     <section className="flex flex-col justify-start items-center w-full h-screen bg-white">
       <div className="w-full flex justify-between items-center p-4">

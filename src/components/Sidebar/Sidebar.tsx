@@ -16,7 +16,7 @@ import { SidebarBtn } from "./SidebarBtn";
 import { SidebarSection } from "./SidebarSection";
 import { SidebarCtaBlock } from "./SidebarCtaBlock";
 import { OverlayBg } from "./OverlayBg";
-import { TitleBar } from "../ListView/TitleBar";
+import { TitleBar } from "../Layout/TitleBar";
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
