@@ -1,16 +1,14 @@
 import { useRouter } from "next/router";
-import { type FC } from "react";
+import { ReactElement, type FC } from "react";
 import { TitleBar } from "../Layout/TitleBar";
-import { ListItem } from "./ListItem";
 import { MailCheck } from "lucide-react";
-import { ListViewContainer } from "./ListViewContainer";
+import { ListContainer } from "./ListContainer";
 
 type Props = {};
 
-export const ListView: FC<Props> = ({}) => {
-  const router = useRouter();
+export const List: FC<Props> = () => {
   return (
-    <ListViewContainer>
+    <ListContainer>
       <TitleBar
         title="Writing"
         Cta={
@@ -20,11 +18,10 @@ export const ListView: FC<Props> = ({}) => {
           </button>
         }
       />
-      <ListItem
-        title="React Beta Docs are the best"
-        date={new Date("02-10-2023")}
-      />
+
+      {/* replace listItem for array of list data rendering */}
+
       {/* if long list implement lazy loading */}
-    </ListViewContainer>
+    </ListContainer>
   );
 };

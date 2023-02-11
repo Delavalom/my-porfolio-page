@@ -6,13 +6,14 @@ type Props = {
     title: string
     date?: Date
     logo?: string,
-    url?: string
+    url?: string,
+    onClick: () => void
 };
 
-export const ListItem: FC<Props> = ({title, date, logo, url}) => {
+export const ListItem: FC<Props> = ({title, date, logo, url, onClick}) => {
     const dateView = dateFormatter(date)
   return (
-    <section className="group w-full px-4 py-2 flex flex-col gap-2 hover:bg-slate-900 rounded-md">
+    <section onClick={onClick} className="group w-full px-4 py-2 flex flex-col gap-2 hover:bg-slate-900 rounded-md">
       <h2 className="font-medium group-hover:text-slate-50">{title}</h2>
         {url ? (
             <div>

@@ -4,7 +4,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const MainContentContainer: FC<Props> = ({ children }) => {
+export const ViewContainer: FC<Props> = ({ children }) => {
   return (
     <main className="flex flex-col justify-start items-center w-full h-screen bg-white">
       {children}

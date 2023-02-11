@@ -1,19 +1,25 @@
-import { ListView } from "@/components/ListView/ListView";
+import { List } from "@/components/List/List";
 import { NextPage } from "next";
 import Head from "next/head";
-import { MainContent } from "@/components/MainContent/MainContent";
+import { View } from "@/components/View/View";
+import { ListItem } from "@/components/List/ListItem";
+import { LayoutView } from "@/components/Layout/LayoutView";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [hasDetail, setHasDetail] = useState(false)
   return (
-    <>
-    <Head>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    </Head>
-    <section className="flex w-full h-full overflow-hidden bg-white">
-      <ListView />
-      <MainContent />
-    </section>
-    </>
+    <LayoutView
+      list={
+        <ListItem
+        onClick={()=> setHasDetail(!hasDetail)}
+          title="React Beta Docs are the best"
+          date={new Date("02-10-2023")}
+        />
+      }
+      view={<View onClick={() => setHasDetail(!hasDetail)} />}
+      hasDetail={hasDetail}
+    />
   );
 };
 
