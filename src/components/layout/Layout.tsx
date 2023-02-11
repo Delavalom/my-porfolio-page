@@ -1,10 +1,16 @@
 import React, { ReactNode } from "react";
+import { Sidebar } from "../Sidebar/Sidebar";
 
 interface Props {
-  title: string;
   children: ReactNode;
+  title?: string;
 }
 
 export const Layout: React.FC<Props> = ({ title, children }) => {
-  return <></>;
+  return (
+    <main className="relative flex h-full min-h-screen w-full">
+      <Sidebar />
+      <section className="flex flex-1">{children}</section>
+    </main>
+  );
 };
