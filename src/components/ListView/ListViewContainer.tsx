@@ -7,7 +7,7 @@ type Props = {
 };
 
 const className =
-  "flex flex-col gap-4 bg-white w-full min-w-[30%] md:w-8 px-3 border border-slate-200 h-screen text-slate-900 overflow-y-scroll scroll-smooth";
+  "flex flex-col gap-4 bg-white w-full min-w-[100%] lg:min-w-[30%] md:w-8 px-3 border border-slate-200 h-screen text-slate-900 overflow-y-scroll scroll-smooth";
 
 export const ListViewContainer: FC<Props> = ({ children }) => {
   return <section className={className}>{children}</section>;

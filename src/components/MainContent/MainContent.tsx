@@ -1,27 +1,22 @@
 import { type FC } from "react";
 import Balancer from "react-wrap-balancer";
+import { EmojiBtn } from "./EmojiBtn";
+import { TitleBar } from "../Layout/TitleBar";
+import { ChevronsLeft } from "lucide-react";
+import { MainContentContainer } from "./MainContentContainer";
 
 type Props = {};
 
 export const MainContent: FC<Props> = ({}) => {
   return (
-    <section className="flex flex-col justify-start items-center w-full h-screen bg-white">
-      <div className="w-full flex justify-between items-center p-4">
-        <h1>React Beta Docs are the best</h1>
-        <div>
-          <div className="flex -space-x-2 overflow-hidden">
-            <p className="inline-block h-fit w-fit rounded-full">😱</p>
-            <p className="inline-block h-fit w-fit rounded-full">🤐</p>
-            <p className="inline-block h-fit w-fit rounded-full">🤯</p>
-            <p className="inline-block h-fit w-fit rounded-full">😍</p>
-          </div>
-        </div>
-      </div>
-      <article className="blog-container">
-        <h1 className="text-black">
-          <Balancer className="">React Beta Docs are the best</Balancer>
-        </h1>
-      </article>
-    </section>
+    <MainContentContainer>
+      <TitleBar
+        title="React Beta Docs are the best"
+        justify="between"
+        Icon={<ChevronsLeft className="lg:hidden" />}
+        Cta={<EmojiBtn />}
+      ></TitleBar>
+      <article className="blog-container"></article>
+    </MainContentContainer>
   );
 };
