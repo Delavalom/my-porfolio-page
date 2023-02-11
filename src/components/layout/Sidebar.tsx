@@ -13,9 +13,9 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
-import { SidebarBtn } from "./ui/SidebarBtn";
-import { SidebarSection } from "./ui/SidebarSection";
-import { SidebarCtaBlock } from "./ui/SidebarCtaBlock";
+import { SidebarBtn } from "../ui/SidebarBtn";
+import { SidebarSection } from "../ui/SidebarSection";
+import { SidebarCtaBlock } from "../ui/SidebarCtaBlock";
 
 export const Sidebar = () => {
   const [toggle, setToggle] = useState(false);
