@@ -21,7 +21,7 @@ export const Sidebar = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <>
-      <aside className="bg-white w-4/5 md:w-2/4 lg:w-3/12 xl:w-2/12 min-h-screen px-4 flex flex-col gap-6 drop-shadow-lg">
+      <aside className="bg-white w-4/5 md:w-2/4 lg:w-3/12 h-screen px-4 flex flex-col gap-6 drop-shadow-lg">
         {/* close button */}
         <div className="flex gap-2 py-4 items-center">
           <X className="text-zinc-700 w-5" />
