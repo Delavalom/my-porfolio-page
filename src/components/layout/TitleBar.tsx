@@ -1,4 +1,3 @@
-import { MailCheck } from "lucide-react";
 import { ReactNode, type FC } from "react";
 
 type Props = {
