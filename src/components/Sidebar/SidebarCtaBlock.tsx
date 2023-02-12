@@ -15,7 +15,7 @@ export const SidebarCtaBlock: FC<Props> = ({href}) => {
   >
     <div className="flex items-center mb-3">
       <span className="bg-indigo-100 text-indigo-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">
-        hey
+        Hey
       </span>
     </div>
     <p className="mb-3 text-sm text-indigo-800 dark:text-blue-400">

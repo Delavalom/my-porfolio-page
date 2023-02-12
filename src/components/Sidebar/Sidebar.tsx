@@ -32,7 +32,6 @@ export const Sidebar = () => {
         {/* Luis Angel arvelo heading */}
         <TitleBar
           title={"Luis Arvelo"}
-          justify="around"
           isMobile={`${isOpen ? "flex" : "hidden"} lg:inline z-50`}
           Icon={
             <X

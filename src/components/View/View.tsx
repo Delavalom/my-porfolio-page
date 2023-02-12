@@ -14,7 +14,6 @@ export const View: FC<Props> = ({onClick}) => {
     <ViewContainer>
       <TitleBar
         title="React Beta Docs are the best"
-        justify="between"
         Icon={<ChevronsLeft onClick={onClick} className="lg:hidden" />}
         Cta={<EmojiBtn />}
       ></TitleBar>

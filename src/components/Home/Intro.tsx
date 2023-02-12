@@ -8,12 +8,24 @@ type Props = {};
 export const Intro: FC<Props> = ({}) => {
   const { setIsOpen } = useNavigation();
   return (
-    <article className=" text-center w-full">
+    <>
       <TitleBar
         Icon={
-          <Menu onClick={() => setIsOpen(true)} className="relative top-2 left-2 z-50 text-zinc-700 w-5 lg:hidden" />
+          <Menu
+            onClick={() => setIsOpen(true)}
+            className="relative top-2 left-2 z-50 text-zinc-700 w-5 lg:hidden"
+          />
         }
       />
-    </article>
+      <article className="flex items-center justify-center">
+        <p className="max-w-[66%]">
+          Hey, I&apos;m a full-stack developer with +3 years of experience in
+          high-performance web applications. I&apos;m passionate about building
+          web tools that impact the world. I&apos;m obsessed with work, always
+          thrive to get better at work and focus to make better products, Open
+          to full-stack opportunities.
+        </p>
+      </article>
+    </>
   );
 };

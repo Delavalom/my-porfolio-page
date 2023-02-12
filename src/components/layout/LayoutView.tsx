@@ -18,7 +18,9 @@ export const LayoutView: FC<Props> = ({list, view, hasDetail}) => {
           {list}
         </ListContainer>
       )}
-      {view}
+      <section className="w-full flex flex-col px-2">
+        {view}
+      </section>
     </>
   );
 };
