@@ -11,23 +11,23 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
-import { useState } from "react";
 import { SidebarBtn } from "./SidebarBtn";
 import { SidebarSection } from "./SidebarSection";
 import { SidebarCtaBlock } from "./SidebarCtaBlock";
 import { OverlayBg } from "./OverlayBg";
 import { TitleBar } from "../Layout/TitleBar";
 import { SidebarContainer } from "./SidebarContainer";
+import { useNavigation } from "@/hooks/useNavigation";
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const {isOpen, setIsOpen} = useNavigation();
 
   function handleClick() {
     setIsOpen(!isOpen);
   }
   return (
     <>
-      <SidebarContainer>
+      <SidebarContainer isOpen={isOpen}>
         {/* close button */}
         {/* Luis Angel arvelo heading */}
         <TitleBar
@@ -35,22 +35,14 @@ export const Sidebar = () => {
           justify="around"
           isMobile={`${isOpen ? "flex" : "hidden"} lg:inline z-50`}
           Icon={
-            isOpen ? (
-              <X
-                className="text-zinc-700 w-5 lg:hidden"
-                onClick={handleClick}
-              />
-            ) : (
-              <Menu
-                className="text-zinc-700 w-5 lg:hidden"
-                onClick={handleClick}
-              />
-            )
+            <X
+              className="text-zinc-700 w-5 lg:hidden"
+              onClick={handleClick}
+            />
           }
         />
         <div className={`${isOpen ? "flex" : "hidden"} lg:flex flex-col gap-6`}>
           <SidebarSection>
-
             <SidebarBtn Icon={Home} title="Home" />
 
             <SidebarBtn Icon={Library} title="Writing" />
