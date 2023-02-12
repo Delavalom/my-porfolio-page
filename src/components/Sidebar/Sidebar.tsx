@@ -1,5 +1,4 @@
 import {
-  Menu,
   X,
   Home,
   Bookmark,

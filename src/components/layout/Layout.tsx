@@ -7,10 +7,11 @@ interface Props {
   title?: string;
 }
 
-export const Layout: React.FC<Props> = ({ title, children }) => {
+export const Layout: React.FC<Props> = ({ title = "Luis Angel Arvelo", children }) => {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <main className="relative flex h-full min-h-screen w-full">

@@ -1,5 +1,4 @@
 import { type FC } from "react";
-import Balancer from "react-wrap-balancer";
 import { EmojiBtn } from "./EmojiBtn";
 import { TitleBar } from "../Layout/TitleBar";
 import { ChevronsLeft } from "lucide-react";

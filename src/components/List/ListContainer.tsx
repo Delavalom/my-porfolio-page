@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ReactNode, type FC } from "react";
-import Balancer from "react-wrap-balancer";
 
 type Props = {
   children: ReactNode;

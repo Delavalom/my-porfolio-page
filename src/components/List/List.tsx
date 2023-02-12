@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import { ReactElement, type FC } from "react";
+import { type FC } from "react";
 import { TitleBar } from "../Layout/TitleBar";
 import { MailCheck } from "lucide-react";
 import { ListContainer } from "./ListContainer";
