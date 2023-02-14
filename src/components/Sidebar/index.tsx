@@ -17,7 +17,7 @@ import { OverlayBg } from "./OverlayBg";
 
 import { SidebarContainer } from "./SidebarContainer";
 import { useNavigation } from "@/hooks/useNavigation";
-import { HeaderBar } from "../Layout/HeaderBar";
+import { HeaderBar } from "../HeaderBar";
 
 export const Sidebar = () => {
   const {isOpen, setIsOpen} = useNavigation();

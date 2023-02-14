@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { HeaderBar } from "../Layout/HeaderBar";
+import { HeaderBar } from "../HeaderBar";
 import { MailCheck } from "lucide-react";
 import { ListContainer } from "./ListContainer";
 
