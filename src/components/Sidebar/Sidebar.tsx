@@ -14,7 +14,7 @@ import { SidebarBtn } from "./SidebarBtn";
 import { SidebarSection } from "./SidebarSection";
 import { SidebarCtaBlock } from "./SidebarCtaBlock";
 import { OverlayBg } from "./OverlayBg";
-import { TitleBar } from "../Layout/TitleBar";
+import { HeaderBar } from "../Layout/HeaderBar";
 import { SidebarContainer } from "./SidebarContainer";
 import { useNavigation } from "@/hooks/useNavigation";
 
@@ -29,7 +29,7 @@ export const Sidebar = () => {
       <SidebarContainer isOpen={isOpen}>
         {/* close button */}
         {/* Luis Angel arvelo heading */}
-        <TitleBar
+        <HeaderBar
           title={"Luis Arvelo"}
           isMobile={`${isOpen ? "flex" : "hidden"} lg:inline z-50`}
           Icon={

@@ -7,7 +7,7 @@ type Props = {
   isMobile?: string
 };
 
-export const TitleBar: FC<Props> = ({ title, Icon, Cta, isMobile = "" }) => {
+export const HeaderBar: FC<Props> = ({ title, Icon, Cta, isMobile = "" }) => {
   return (
     <div className="w-full h-14 p-4 flex items-center justify-between sticky top-0 bg-white">
       {Icon && Icon}

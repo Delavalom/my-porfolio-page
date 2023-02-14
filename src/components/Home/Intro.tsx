@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { TitleBar } from "@/components/Layout/TitleBar";
+import { HeaderBar } from "@/components/Layout/HeaderBar";
 import { Menu } from "lucide-react";
 import { useNavigation } from "@/hooks/useNavigation";
 
@@ -9,7 +9,7 @@ export const Intro: FC<Props> = ({}) => {
   const { setIsOpen } = useNavigation();
   return (
     <>
-      <TitleBar
+      <HeaderBar
         Icon={
           <Menu
             onClick={() => setIsOpen(true)}
