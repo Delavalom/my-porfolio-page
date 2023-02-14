@@ -13,16 +13,6 @@ type Props = {
 export const View: FC<Props> = ({ onClick, children }) => {
   return (
     <ViewContainer>
-      <HeaderBar
-        title="React Beta Docs are the best"
-        Icon={
-          <Link href="/">
-            <ChevronsLeft onClick={onClick} className="lg:hidden" />
-          </Link>
-        }
-        Cta={<EmojiBtn />}
-      ></HeaderBar>
-      {/* <article className="w-full max-w-[600px] px-2 mx-auto flex flex-col items-center justify-center"></article> */}
       <article className="blog-container">{children}</article>
     </ViewContainer>
   );
