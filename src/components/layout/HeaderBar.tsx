@@ -7,14 +7,14 @@ type Props = {
   isMobile?: string
 };
 
-// export const HeaderBar: FC<Props> = ({ title, Icon, Cta, isMobile = "" }) => {
-//   return (
-//     <div className="w-full h-14 p-4 flex items-center justify-between sticky top-0 bg-white">
-//       {Icon && Icon}
-//       {/* heading Title coming from navigation */}
-//       <h1 className={`font-semibold text-sm md:text-md ${isMobile}`}>{title}</h1>
-//       {/* suscribe newsletter button */}
-//       {Cta && Cta}
-//     </div>
-//   );
-// };
+export const HeaderBar: FC<Props> = ({ title, Icon, Cta, isMobile = "" }) => {
+  return (
+    <div className="w-full h-14 p-4 flex items-center justify-between sticky top-0 bg-white">
+      {Icon && Icon}
+      {/* heading Title coming from navigation */}
+      <h1 className={`font-semibold text-sm md:text-md ${isMobile}`}>{title}</h1>
+      {/* suscribe newsletter button */}
+      {Cta && Cta}
+    </div>
+  );
+};

@@ -10,15 +10,16 @@ type Props = {
 export const LayoutView: FC<Props> = ({ list, view, hasDetail }) => {
   return (
     <>
-      {list && (
+      {list && !view ? (
         <ListContainer
           id="list"
           className={`${hasDetail ? "hidden lg:flex" : "min-h-screen w-full"}`}
         >
           {list}
         </ListContainer>
+      ) : (
+        <section className="w-full flex flex-col px-2">{view}</section>
       )}
-      <section className="w-full flex flex-col px-2">{view}</section>
     </>
   );
 };
