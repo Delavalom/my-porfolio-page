@@ -1,9 +1,9 @@
 import { Menu } from "lucide-react";
 import { ReactElement, useContext, type FC } from "react";
-import { ListContainer } from "../List/ListContainer";
-import { View } from "../View";
-import { EmojiBtn } from "../View/EmojiBtn";
-import { HeaderBar } from "../HeaderBar";
+import { ListContainer } from "./List/ListContainer";
+import { View } from "./View";
+import { EmojiBtn } from "./View/EmojiBtn";
+import { HeaderBar } from "./HeaderBar";
 import Link from "next/link";
 import { NavigationContext } from "@/Context/NavigationContext";
 
