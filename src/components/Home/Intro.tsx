@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { TitleBar } from "../Layout/TitleBar";
+import { TitleBar } from "@/components/Layout/TitleBar";
 import { Menu } from "lucide-react";
 import { useNavigation } from "@/hooks/useNavigation";
 
