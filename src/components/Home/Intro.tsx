@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { HeaderBar } from "@/components/Layout/HeaderBar";
+import { HeaderBar } from "../Layout/HeaderBar";
 import { Menu } from "lucide-react";
 import { useNavigation } from "@/hooks/useNavigation";
 
@@ -8,7 +8,7 @@ type Props = {};
 export const Intro: FC<Props> = ({}) => {
   const { setIsOpen } = useNavigation();
   return (
-    <>
+    <section>
       <HeaderBar
         Icon={
           <Menu
@@ -64,6 +64,6 @@ export const Intro: FC<Props> = ({}) => {
           success, and I was proud to contribute to the company&apos;s success.
         </p>
       </article>
-    </>
+    </section>
   );
 };
