@@ -9,15 +9,6 @@ export const Intro: FC<Props> = ({}) => {
   const { setIsOpen } = useNavigation();
   return (
     <>
-      <HeaderBar
-        Icon={
-          <Menu
-            onClick={() => setIsOpen(true)}
-            className="relative top-2 left-2 z-50 text-zinc-700 w-5 lg:hidden"
-          />
-        }
-      />
-      <article className="w-full max-w-[600px] px-2 mx-auto flex flex-col items-center justify-center">
         <p>
           Hey, I&apos;m a full-stack developer with +3 years of experience in
           high-performance web applications. I&apos;m passionate about building
@@ -63,7 +54,6 @@ export const Intro: FC<Props> = ({}) => {
           software development and system integration. The project was a
           success, and I was proud to contribute to the company&apos;s success.
         </p>
-      </article>
     </>
   );
 };

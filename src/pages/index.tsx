@@ -1,4 +1,4 @@
-import { List } from "@/components/List/List";
+import { List } from "@/components/List";
 import { NextPage } from "next";
 import { LayoutView } from "@/components/Layout/LayoutView";
 import { useState } from "react";
