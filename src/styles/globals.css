@@ -17,3 +17,11 @@
         @apply leading-normal tracking-widest 
     }
 }
+
+h2 {
+    @apply font-semibold text-slate-800
+}
+
+p {
+    @apply text-slate-800 text-sm
+}

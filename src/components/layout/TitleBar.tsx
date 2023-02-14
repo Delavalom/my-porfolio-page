@@ -9,7 +9,7 @@ type Props = {
 
 export const TitleBar: FC<Props> = ({ title, Icon, Cta, isMobile = "" }) => {
   return (
-    <div className="w-full p-4 flex items-center justify-between sticky top-0 bg-white">
+    <div className="w-full h-14 p-4 flex items-center justify-between sticky top-0 bg-white">
       {Icon && Icon}
       {/* heading Title coming from navigation */}
       <h1 className={`font-semibold text-sm md:text-md ${isMobile}`}>{title}</h1>
