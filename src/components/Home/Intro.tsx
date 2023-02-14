@@ -9,14 +9,7 @@ export const Intro: FC<Props> = ({}) => {
   const { setIsOpen } = useNavigation();
   return (
     <section>
-      <HeaderBar
-        Icon={
-          <Menu
-            onClick={() => setIsOpen(true)}
-            className="relative top-2 left-2 z-50 text-zinc-700 w-5 lg:hidden"
-          />
-        }
-      />
+      
       <article className="w-full max-w-[600px] px-2 mx-auto flex flex-col items-center justify-center">
         <p>
           Hey, I&apos;m a full-stack developer with +3 years of experience in
