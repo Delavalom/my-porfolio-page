@@ -1,6 +1,6 @@
 import { ReactNode, type FC } from "react";
 import { EmojiBtn } from "./EmojiBtn";
-import { HeaderBar } from "../HeaderBar";
+import { HeaderBar } from "../Layouts/HeaderBar";
 import { ChevronsLeft } from "lucide-react";
 import { ViewContainer } from "./ViewContainer";
 import Link from "next/link";

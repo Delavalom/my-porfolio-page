@@ -17,7 +17,7 @@ import { OverlayBg } from "./OverlayBg";
 
 import { SidebarContainer } from "./SidebarContainer";
 import { useNavigation } from "@/hooks/useNavigation";
-import { HeaderBar } from "../HeaderBar";
+import { HeaderBar } from "../Layouts/HeaderBar";
 
 export const Sidebar = () => {
   const {isOpen, setIsOpen} = useNavigation();
@@ -39,7 +39,7 @@ export const Sidebar = () => {
             />
           }
         />
-        <div className={`${isOpen ? "flex" : "hidden"} lg:flex flex-col gap-6`}>
+        <div className={`${isOpen ? "flex" : "hidden"} lg:flex px-3 flex-col gap-6`}>
           <SidebarSection>
             <SidebarBtn Icon={Home} title="Home" />
 

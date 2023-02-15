@@ -1,9 +1,8 @@
 import { List } from "@/components/List";
 import { NextPage } from "next";
-import { LayoutView } from "@/components/LayoutView";
+import { LayoutView } from "@/components/Layouts/LayoutView";
 import { useState } from "react";
 import { Intro } from "@/components/Home/Intro";
-import { ListItem } from "@/components/List/ListItem";
 
 const Home: NextPage = () => {
   const [hasDetail, setHasDetail] = useState(false);

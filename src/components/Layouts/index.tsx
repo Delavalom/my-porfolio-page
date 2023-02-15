@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "../Sidebar";
 import Head from "next/head";
 
 interface Props {
@@ -14,7 +14,7 @@ export const Layout: React.FC<Props> = ({ title = "Luis Angel Arvelo", children 
         <title>{title}</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <main className="relative flex h-full min-h-screen w-full">
+      <main className="flex min-h-screen w-screen">
         <Sidebar />
         <section className="flex flex-1">{children}</section>
       </main>
