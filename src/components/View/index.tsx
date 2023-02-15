@@ -13,7 +13,7 @@ type Props = {
 export const View: FC<Props> = ({ onClick, children }) => {
   return (
     <ViewContainer>
-      <article className="blog-container">{children}</article>
+      {children}
     </ViewContainer>
   );
 };

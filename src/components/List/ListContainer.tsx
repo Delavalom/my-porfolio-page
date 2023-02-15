@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ReactNode, type FC } from "react";
 
 type Props = {

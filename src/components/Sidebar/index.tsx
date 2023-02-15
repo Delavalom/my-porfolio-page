@@ -20,7 +20,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { HeaderBar } from "../Layouts/HeaderBar";
 
 export const Sidebar = () => {
-  const {isOpen, setIsOpen} = useNavigation();
+  const { isOpen, setIsOpen } = useNavigation();
 
   function handleClick() {
     setIsOpen(!isOpen);
@@ -28,18 +28,17 @@ export const Sidebar = () => {
   return (
     <>
       <SidebarContainer isOpen={isOpen}>
-        {/* close button */}
-        {/* Luis Angel arvelo heading */}
         <HeaderBar
           title={"Luis Arvelo"}
           Icon={
-            <X
-              className="text-zinc-700 w-5 lg:hidden"
-              onClick={handleClick}
-            />
+            <X className="text-zinc-700 w-5 lg:hidden" onClick={handleClick} />
           }
         />
-        <div className={`${isOpen ? "flex" : "hidden"} lg:flex px-3 flex-col gap-6`}>
+        <div
+          className={`${
+            isOpen ? "flex" : "hidden"
+          } lg:flex px-3 flex-col gap-6`}
+        >
           <SidebarSection>
             <SidebarBtn Icon={Home} title="Home" />
 

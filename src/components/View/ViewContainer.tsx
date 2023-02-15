@@ -6,7 +6,7 @@ type Props = {
 
 export const ViewContainer: FC<Props> = ({ children }) => {
   return (
-    <main className="flex flex-col justify-start items-center w-full h-screen bg-white">
+    <main className="flex flex-col justify-start items-center w-full h-full bg-white">
       {children}
     </main>
   );
