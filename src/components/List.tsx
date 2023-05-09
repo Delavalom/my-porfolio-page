@@ -1,11 +1,20 @@
 import { MailCheck } from "lucide-react";
-import { type FC, type ReactNode } from "react";
-import { HeaderBar } from "./HeaderBar";
+import Image from "next/image";
+import { type FC } from "react";
 import { dateFormatter } from "~/lib/utils";
+import { HeaderBar } from "./HeaderBar";
 import Link from "next/link";
 
+export type ListData = {
+  title: string;
+  date?: Date;
+  logo?: string;
+  url?: string;
+};
+
 type Props = {
-  children: ReactNode;
+  listTitle: string
+  list: ListData[];
   className?: string;
   id?: string;
 };
@@ -13,11 +22,11 @@ type Props = {
 const tailwindClass =
   "flex flex-col gap-4 bg-white w-full min-w-[100%] lg:min-w-[30%] md:w-8 px-3 border border-slate-200 h-screen text-slate-900 overflow-y-scroll scroll-smooth";
 
-export const List: FC<Props> = ({ children, className, id }) => {
+export const List: FC<Props> = ({ listTitle, list, className, id }) => {
   return (
     <section id={id} className={`${tailwindClass} ${className}`}>
       <HeaderBar
-        title="Writing"
+        title={listTitle}
         Cta={
           <button className="flex items-center gap-2 border border-slate-300 px-3 py-1 rounded-sm backdrop-blur-sm">
             <MailCheck className="w-4" />
@@ -25,45 +34,40 @@ export const List: FC<Props> = ({ children, className, id }) => {
           </button>
         }
       />
-      {/* replace listItem for array of list data rendering */}
-
-      {/* if long list implement lazy loading */}
-      {children}
+      {list.map((item) => (
+        <ListItem
+          key={item.title}
+          listTitle={listTitle}
+          title={item.title}
+          date={item.date}
+          logo={item.logo}
+          url={item.url}
+        />
+      ))}
     </section>
   );
 };
 
-type ListItemProps = {
-  title: string;
-  date?: Date;
-  logo?: string;
-  url?: string;
-  onClick: () => void;
-};
-
-export const ListItem: FC<ListItemProps> = ({
-  title,
-  date,
-  logo,
-  url,
-  onClick,
-}) => {
+export const ListItem: FC<ListData & { listTitle: string}> = ({ listTitle, title, date, logo, url }) => {
   const dateView = dateFormatter(date);
   return (
-    <section
-      onClick={onClick}
-      className="group w-full px-4 py-2 flex flex-col gap-2 hover:bg-slate-900 rounded-md"
-    >
-      <h2 className="font-medium group-hover:text-slate-50">{title}</h2>
-      {url ? (
+    <Link href={`/${listTitle}/${title}`}>
+    <section className="group w-full p-4 flex flex-col gap-2 hover:bg-slate-900 rounded-md transition-colors duration-150">
+      <div className="h-1/6 w-1/6 rounded-lg">
+        {logo && <Image src={logo} alt={`${url} domain`} />}
+      </div>
+      <div>
+        <h2 className="font-medium group-hover:text-slate-50">{title}</h2>
         <div>
-          {logo} <Link href={url}>{url}</Link>
+          {url && <span>{url}</span>}
+          {date && (
+            <h2 className="text-slate-400 font-extralight text-sm group-hover:text-slate-300">
+              {dateView}
+            </h2>
+          )}
         </div>
-      ) : (
-        <h2 className="text-slate-400 font-extralight text-sm group-hover:text-slate-300">
-          {dateView}
-        </h2>
-      )}
+      </div>
     </section>
+          </Link>
   );
 };

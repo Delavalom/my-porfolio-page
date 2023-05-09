@@ -26,21 +26,20 @@ export const Sidebar = () => {
   return (
     <>
       <SidebarContainer isOpen={isOpen}>
-        <HeaderBar
-          title={"Luis Arvelo"}
-          Icon={
-            <X className="text-zinc-700 w-5 lg:hidden" onClick={handleClick} />
-          }
-        />
+        <HeaderBar title="Luis Arvelo" />
         <div
           className={`${
             isOpen ? "flex" : "hidden"
           } lg:flex px-3 flex-col gap-6`}
         >
           <SidebarSection>
-            <SidebarBtn Icon={Home} title="Home" />
+            <Link href="/">
+              <SidebarBtn Icon={Home} title="Home" />
+            </Link>
 
-            <SidebarBtn Icon={Library} title="Writing" />
+            <Link href="/writing">
+              <SidebarBtn Icon={Library} title="Writing" />
+            </Link>
           </SidebarSection>
 
           <SidebarSection title="Me">
