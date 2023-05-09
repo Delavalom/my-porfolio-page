@@ -1,21 +1,21 @@
 import {
   Bookmark,
   Code2,
+  ExternalLink,
   Github,
   Home,
   Layers,
   Library,
   Linkedin,
   Terminal,
-  X,
-  Youtube,
+  Twitter,
 } from "lucide-react";
-import { OverlayBg } from "./OverlayBg";
-import { useNavigation } from "~/hooks/useNavigation";
-import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { type FC, type ReactNode } from "react";
+import { useNavigation } from "~/hooks/useNavigation";
 import { HeaderBar } from "./HeaderBar";
+import { OverlayBg } from "./OverlayBg";
+import { Button } from "./ui/Button";
 
 export const Sidebar = () => {
   const { isOpen, setIsOpen } = useNavigation();
@@ -33,26 +33,36 @@ export const Sidebar = () => {
           } lg:flex px-3 flex-col gap-6`}
         >
           <SidebarSection>
-            <Link href="/">
-              <SidebarBtn Icon={Home} title="Home" />
-            </Link>
-
-            <Link href="/writing">
-              <SidebarBtn Icon={Library} title="Writing" />
-            </Link>
+            <SidebarBtn href="/" Icon={Home} title="Home" />
+            <SidebarBtn href="/writing" Icon={Library} title="Writing" />
           </SidebarSection>
 
           <SidebarSection title="Me">
-            <SidebarBtn Icon={Bookmark} title="Bookmarks" />
-            <SidebarBtn Icon={Layers} title="Stack" />
-            <SidebarBtn Icon={Code2} title="Projects" />
-            <SidebarBtn Icon={Terminal} title="Terminal" />
+            <SidebarBtn href="/bookmark" Icon={Bookmark} title="Bookmarks" />
+            <SidebarBtn href="/stack" Icon={Layers} title="Stack" />
+            <SidebarBtn href="/projects" Icon={Code2} title="Projects" />
+            <SidebarBtn href="/terminal" Icon={Terminal} title="Terminal" />
           </SidebarSection>
 
           <SidebarSection title="Online">
-            <SidebarBtn Icon={Github} title="Github" hasExternalLink />
-            <SidebarBtn Icon={Linkedin} title="LinkedIn" hasExternalLink />
-            <SidebarBtn Icon={Youtube} title="Youtube" hasExternalLink />
+            <SidebarBtn
+              href="https://github.com/Delavalom"
+              Icon={Github}
+              title="Github"
+              hasExternalLink
+            />
+            <SidebarBtn
+              href="https:/www.linkedin.com/in/luis-arvelo"
+              Icon={Linkedin}
+              title="LinkedIn"
+              hasExternalLink
+            />
+            <SidebarBtn
+              href="https://twitter.com/Delavalom"
+              Icon={Twitter}
+              title="Twitter"
+              hasExternalLink
+            />
           </SidebarSection>
 
           <SidebarCtaBlock href={"#"} />
@@ -75,7 +85,7 @@ const SidebarContainer: FC<SidebarContainerProps> = ({ children, isOpen }) => {
         isOpen
           ? "absolute inset-y-0 left-0 translate-x-0 shadow-lg"
           : "absolute -translate-x-full"
-      } 3xl:w-80 z-30 flex min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:dark:bg-gray-900 2xl:w-72`}
+      } 3xl:w-80 z-30 flex h-full w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:dark:bg-gray-900 2xl:w-72`}
     >
       {children}
     </aside>
@@ -85,27 +95,29 @@ const SidebarContainer: FC<SidebarContainerProps> = ({ children, isOpen }) => {
 type SidebarBtnProps = {
   Icon: FC<{ className?: string }>;
   title: string;
-  onClick?: () => void;
+  href: string;
   hasExternalLink?: true;
 };
 
 const SidebarBtn: FC<SidebarBtnProps> = ({
   Icon,
   title,
-  onClick,
+  href,
   hasExternalLink,
 }) => {
   return (
-    <div
-      onClick={onClick}
-      className="group flex items-center pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
-    >
-      <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
-      <span className="text-sm font-medium">{title}</span>
-      {hasExternalLink && (
-        <ExternalLink className="ml-auto w-[13px] text-slate-500 group-hover:text-slate-50" />
-      )}
-    </div>
+    <Button variant="ghost" asChild className="justify-start">
+      <Link
+        href={href}
+        className="group flex text-left pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
+      >
+        <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
+        <span className="text-sm font-medium">{title}</span>
+        {hasExternalLink && (
+          <ExternalLink className="ml-auto w-[13px] text-slate-500 group-hover:text-slate-50" />
+        )}
+      </Link>
+    </Button>
   );
 };
 

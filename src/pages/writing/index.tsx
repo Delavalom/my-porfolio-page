@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { List, ListData } from "~/components/List";
-import { useNavigation } from "~/hooks/useNavigation";
 
 const list = [
   {
@@ -9,15 +8,13 @@ const list = [
   }
 ] satisfies ListData[];
 
-const Home: NextPage = () => {
-  const { setIsOpen } = useNavigation();
+const Writing: NextPage = () => {
 
   return (
-    <main className="w-full h-full">
+    <main className="w-full h-full flex">
       <List
         id="list"
         listTitle="Writing"
-        className="min-h-screen w-screen lg:max-w-xs"
         list={list}
       />
       <main className="hidden bg-dots lg:flex flex-col justify-start items-center w-full h-full bg-white"></main>
@@ -25,4 +22,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Writing;
