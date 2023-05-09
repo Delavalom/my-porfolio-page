@@ -2,10 +2,10 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { ReactElement, type FC } from "react";
-import { ListContainer } from "../List/ListContainer";
-import { View } from "../View";
-import { EmojiBtn } from "../View/EmojiBtn";
+import { View } from "./View";
+import { EmojiBtn } from "./EmojiBtn";
 import { HeaderBar } from "./HeaderBar";
+import { List } from "./List";
 
 type Props = {
   list?: ReactElement;
@@ -24,12 +24,12 @@ export const LayoutView: FC<Props> = ({
   return (
     <>
       {true ? (
-        <ListContainer
+        <List
           id="list"
           className={`${hasDetail ? "hidden lg:flex" : "min-h-screen w-full"}`}
         >
           {list}
-        </ListContainer>
+        </List>
       ) : (
         <View>
           <HeaderBar

@@ -1,5 +1,4 @@
 import { ReactNode, type FC } from "react";
-import { ViewContainer } from "./ViewContainer";
 
 type Props = {
   children: ReactNode;
@@ -7,8 +6,8 @@ type Props = {
 
 export const View: FC<Props> = ({ children }) => {
   return (
-    <ViewContainer>
+    <main className="bg-dots flex flex-col justify-start items-center w-full h-full bg-white">
       {children}
-    </ViewContainer>
+    </main>
   );
 };

@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { ContentContainer } from "../ContentContainer";
+import { ContentContainer } from "./ContentContainer";
 
 type Props = {};
 

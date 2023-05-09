@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Sidebar } from "../Sidebar";
+import { Sidebar } from "./Sidebar";
 import Head from "next/head";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   title?: string;
 }
 
-export const Layout: React.FC<Props> = ({ title = "Luis Angel Arvelo", children }) => {
+export const RootLayout: React.FC<Props> = ({ title = "Luis Angel Arvelo", children }) => {
   return (
     <>
       <Head>
