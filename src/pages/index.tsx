@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Intro } from "@/components/Home/Intro";
 
 const Home: NextPage = () => {
-  const [hasDetail, setHasDetail] = useState(false);
+  const [hasDetail, setHasDetail] = useState(true);
   return <LayoutView view={<Intro />} hasDetail={hasDetail} title="Writing" list={<div>Hola</div>} />;
 };
 
