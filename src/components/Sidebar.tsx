@@ -11,10 +11,10 @@ import {
   Youtube,
 } from "lucide-react";
 import { OverlayBg } from "./OverlayBg";
-import { useNavigation } from "@/hooks/useNavigation";
+import { useNavigation } from "~/hooks/useNavigation";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { FC, ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 import { HeaderBar } from "./HeaderBar";
 
 export const Sidebar = () => {

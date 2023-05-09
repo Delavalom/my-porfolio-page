@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { Sidebar } from "./Sidebar";
 import Head from "next/head";
 

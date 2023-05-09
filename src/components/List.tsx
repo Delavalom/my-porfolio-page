@@ -1,7 +1,7 @@
 import { MailCheck } from "lucide-react";
 import { type FC, type ReactNode } from "react";
 import { HeaderBar } from "./HeaderBar";
-import { dateFormatter } from "@/lib/utils";
+import { dateFormatter } from "~/lib/utils";
 import Link from "next/link";
 
 type Props = {

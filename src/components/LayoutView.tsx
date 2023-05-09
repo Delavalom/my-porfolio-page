@@ -1,4 +1,4 @@
-import { useNavigation } from "@/hooks/useNavigation";
+import { useNavigation } from "~/hooks/useNavigation";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { ReactElement, type FC } from "react";
