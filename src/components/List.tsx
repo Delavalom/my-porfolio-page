@@ -25,10 +25,10 @@ export const List: FC<Props> = ({ children, className, id }) => {
           </button>
         }
       />
-      {children}
       {/* replace listItem for array of list data rendering */}
 
       {/* if long list implement lazy loading */}
+      {children}
     </section>
   );
 };

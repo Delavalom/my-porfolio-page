@@ -99,7 +99,7 @@ const SidebarBtn: FC<SidebarBtnProps> = ({
   return (
     <div
       onClick={onClick}
-      className="group flex items-center pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900"
+      className="group flex items-center pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
     >
       <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
       <span className="text-sm font-medium">{title}</span>
