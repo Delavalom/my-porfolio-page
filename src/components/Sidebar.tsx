@@ -15,8 +15,8 @@ import { type FC, type ReactNode } from "react";
 import { useNavigation } from "~/hooks/useNavigation";
 import { HeaderBar } from "./HeaderBar";
 import { OverlayBg } from "./OverlayBg";
-import { Button } from "./ui/Button";
 import { Badge } from "./ui/Badge";
+import { Button } from "./ui/Button";
 
 export const Sidebar = () => {
   const { isOpen, setIsOpen } = useNavigation();
@@ -41,8 +41,10 @@ export const Sidebar = () => {
           <SidebarSection title="Me">
             <SidebarBtn href="/bookmark" Icon={Bookmark} title="Bookmarks" />
             <SidebarBtn href="/stack" Icon={Layers} title="Stack" />
-            <SidebarBtn href="/projects" Icon={Code2} title="Projects" />
-            <SidebarBtn href="/terminal" Icon={Terminal} title="Terminal" />
+            <SidebarBtn href="/project" Icon={Code2} title="Projects" />
+            <Button disabled={true}>
+              <SidebarBtn href="/terminal" Icon={Terminal} title="Terminal" />
+            </Button>
           </SidebarSection>
 
           <SidebarSection title="Online">
@@ -112,9 +114,9 @@ const SidebarBtn: FC<SidebarBtnProps> = ({
     <Button variant="ghost" asChild className="justify-start">
       <Link
         href={href}
-        className="group flex gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
+        className="group flex gap-4 w-full rounded-md cursor-pointer transition-colors duration-200"
       >
-        <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
+        <Icon className="w-5 group-hover:text-slate-50" />
         <span className="text-sm font-medium">{title}</span>
         {hasExternalLink && (
           <ExternalLink className="ml-auto w-[13px] text-slate-500 group-hover:text-slate-50" />
