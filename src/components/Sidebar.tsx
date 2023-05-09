@@ -16,6 +16,7 @@ import { useNavigation } from "~/hooks/useNavigation";
 import { HeaderBar } from "./HeaderBar";
 import { OverlayBg } from "./OverlayBg";
 import { Button } from "./ui/Button";
+import { Badge } from "./ui/Badge";
 
 export const Sidebar = () => {
   const { isOpen, setIsOpen } = useNavigation();
@@ -65,7 +66,9 @@ export const Sidebar = () => {
             />
           </SidebarSection>
 
-          <SidebarCtaBlock href={"#"} />
+          <SidebarCtaBlock
+            href={"https://github.com/Delavalom/my-porfolio-page"}
+          />
         </div>
       </SidebarContainer>
       <OverlayBg isOpen={isOpen} onClick={handleClick} />
@@ -109,7 +112,7 @@ const SidebarBtn: FC<SidebarBtnProps> = ({
     <Button variant="ghost" asChild className="justify-start">
       <Link
         href={href}
-        className="group flex text-left pl-2 pr-6 py-1 gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
+        className="group flex gap-4 w-full rounded-md text-slate-900 hover:text-slate-50 hover:bg-slate-900 cursor-pointer transition-colors duration-200"
       >
         <Icon className="w-5 text-slate-700 group-hover:text-slate-50" />
         <span className="text-sm font-medium">{title}</span>
@@ -129,23 +132,20 @@ const SidebarCtaBlock: FC<SidebarCtaBlockProps> = ({ href }) => {
   return (
     <div
       id="dropdown-cta"
-      className="p-4 mt-6 rounded-lg bg-slate-300 dark:bg-slate-900"
+      className="p-4 rounded-lg bg-slate-300 dark:bg-slate-900"
       role="alert"
     >
       <div className="flex items-center mb-3">
-        <span className="bg-slate-100 text-slate-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-slate-200 dark:text-slate-900">
-          Hey
-        </span>
+        <Badge>hey</Badge>
       </div>
       <p className="mb-3 text-sm text-slate-800 dark:text-slate-400">
-        If you like this personal site, please give me a start on github and
-        fork it, it&apos;s open source.
+        If you like this porfolio. Fork it, it&apos;s open source.
       </p>
       <Link
         className="text-sm text-slate-800 underline hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
         href={href}
       >
-        Repository link
+        Repo link
       </Link>
     </div>
   );
