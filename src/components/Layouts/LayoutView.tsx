@@ -1,11 +1,11 @@
+import { useNavigation } from "@/hooks/useNavigation";
 import { Menu } from "lucide-react";
-import { ReactElement, useContext, type FC } from "react";
+import Link from "next/link";
+import { ReactElement, type FC } from "react";
 import { ListContainer } from "../List/ListContainer";
 import { View } from "../View";
 import { EmojiBtn } from "../View/EmojiBtn";
 import { HeaderBar } from "./HeaderBar";
-import Link from "next/link";
-import { NavigationContext } from "@/Context/NavigationContext";
 
 type Props = {
   list?: ReactElement;
@@ -20,10 +20,10 @@ export const LayoutView: FC<Props> = ({
   hasDetail,
   title = "",
 }) => {
-  const {setIsOpen} = useContext(NavigationContext)
+  const {setIsOpen} = useNavigation()
   return (
     <>
-      {list && !view ? (
+      {true ? (
         <ListContainer
           id="list"
           className={`${hasDetail ? "hidden lg:flex" : "min-h-screen w-full"}`}
@@ -31,7 +31,7 @@ export const LayoutView: FC<Props> = ({
           {list}
         </ListContainer>
       ) : (
-        <View onClick={() => {}}>
+        <View>
           <HeaderBar
             title={title}
             Icon={

@@ -6,7 +6,7 @@ import { Intro } from "@/components/Home/Intro";
 
 const Home: NextPage = () => {
   const [hasDetail, setHasDetail] = useState(false);
-  return <LayoutView view={<Intro />} hasDetail={hasDetail} />;
+  return <LayoutView view={<Intro />} hasDetail={hasDetail} title="Writing" list={<div>Hola</div>} />;
 };
 
 export default Home;

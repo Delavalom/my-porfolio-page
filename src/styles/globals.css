@@ -3,25 +3,40 @@
 @tailwind utilities;
 
 @layer base {
-    * {
-        @apply box-border
-    }
+  * {
+    @apply box-border;
+  }
 }
 
 @layer components {
-    .blog-container {
-        @apply sm:max-w-[700px] lg:max-w-[520px]
-    }
+  .blog-container {
+    @apply sm:max-w-[700px] lg:max-w-[520px];
+  }
 
-    .blog-content {
-        @apply leading-normal tracking-widest 
-    }
+  .blog-content {
+    @apply leading-normal tracking-widest;
+  }
 }
 
 h2 {
-    @apply font-semibold text-slate-800
+  @apply font-semibold text-slate-800;
 }
 
 p {
-    @apply text-slate-800 text-sm
+  @apply text-slate-800 text-sm;
+}
+
+.bg-dots {
+  background: linear-gradient(90deg, #f9fafb 15px, transparent 1%) center,
+    linear-gradient(#f9fafb 15px, transparent 1%) center, rgba(0, 0, 0, 0.24);
+  background-size: 16px 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-dots {
+    background: linear-gradient(90deg, #050505 15px, transparent 1%) center,
+      linear-gradient(#050505 15px, transparent 1%) center,
+      rgba(255, 255, 255, 0.16);
+    background-size: 16px 16px;
+  }
 }
