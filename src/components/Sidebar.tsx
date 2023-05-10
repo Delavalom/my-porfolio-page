@@ -116,7 +116,7 @@ const SidebarBtn: FC<SidebarBtnProps> = ({
         href={href}
         className="group flex gap-4 w-full rounded-md cursor-pointer transition-colors duration-200"
       >
-        <Icon className="w-5 group-hover:text-slate-50" />
+        <Icon className="w-5 h-5" />
         <span className="text-sm font-medium">{title}</span>
         {hasExternalLink && (
           <ExternalLink className="ml-auto w-[13px] text-slate-500 group-hover:text-slate-50" />
