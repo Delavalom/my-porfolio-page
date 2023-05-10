@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from '@contentlayer/source-files'
 
 export const Intro = defineDocumentType(() => ({
   name: 'Intro',
-  filePathPattern: `intro.mdx`,
+  filePathPattern: `intro/intro.mdx`,
   isSingleton: true,
   contentType: "mdx",
   fields: {
@@ -14,4 +14,17 @@ export const Intro = defineDocumentType(() => ({
   },
 }))
 
-export default makeSource({ contentDirPath: './src/content/intro', documentTypes: [Intro] })
+export const Projects = defineDocumentType(() => ({
+  name: 'Projects',
+  filePathPattern: `projects/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+  },
+  computedFields: {
+    url: { type: 'string', resolve: (project) => `/projects/${project._raw.flattenedPath}` },
+  },
+}))
+
+export default makeSource({ contentDirPath: './src/content', documentTypes: [Intro, Projects] })
