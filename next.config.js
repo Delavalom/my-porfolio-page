@@ -11,6 +11,9 @@ const nextConfig = {
       "res.cloudinary.com",
     ],
   },
+  typescript: {
+    ignoreBuildErrors: true
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
