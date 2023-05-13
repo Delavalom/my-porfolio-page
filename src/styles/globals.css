@@ -105,10 +105,8 @@ p {
 }
 
 @media (prefers-color-scheme: dark) {
-  p {
-    color: white
-  }
   * {
+    color: white;
     background-color: black;
   }
   .bg-dots {
