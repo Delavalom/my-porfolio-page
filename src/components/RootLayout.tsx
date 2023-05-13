@@ -20,7 +20,7 @@ export const RootLayout: React.FC<Props> = ({
         <title>{title}</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <main className={cn(className, "flex")}>
+      <main className={cn(className, "flex h-screen w-screen")}>
         <Sidebar />
         <section className="flex flex-1">{children}</section>
       </main>
