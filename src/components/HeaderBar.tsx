@@ -15,19 +15,12 @@ export const HeaderBar: FC<Props> = ({ title, Cta }) => {
     <div className="w-full max-w-4xl h-14 p-4 flex items-center gap-4 sticky top-0 backdrop-blur-2xl">
       {!isOpen ? (
         <Button className="w-fit" variant="ghost">
-          <Menu
-            onClick={() => setIsOpen(true)}
-            className="lg:hidden cursor-pointer w-8 h-8 p-[6px] hover:bg-slate-200 rounded-md"
-          />
+          <Menu onClick={() => setIsOpen(true)} />
         </Button>
       ) : (
         <Button className="w-fit" variant="ghost">
-
-        <X
-          onClick={() => setIsOpen(false)}
-          className="cursor-pointer w-8 h-8 p-[6px] hover:bg-slate-200 rounded-md"
-          />
-          </Button>
+          <X onClick={() => setIsOpen(false)} />
+        </Button>
       )}
       <div className="flex items-center justify-between flex-1">
         {/* heading Title coming from navigation */}
