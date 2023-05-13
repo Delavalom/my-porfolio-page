@@ -105,6 +105,9 @@ p {
 }
 
 @media (prefers-color-scheme: dark) {
+  p {
+    color: white
+  }
   .bg-dots {
     background: linear-gradient(90deg, #050505 15px, transparent 1%) center,
       linear-gradient(#050505 15px, transparent 1%) center,
