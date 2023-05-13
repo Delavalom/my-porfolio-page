@@ -9,12 +9,12 @@ import ReactJS from "@assets/React.svg";
 import Jest from "@assets/Jest.svg";
 import React, { FunctionComponent } from "react";
 
-type Logos = {
+type Logo = {
   Name: string;
   Icon: FunctionComponent<React.SVGProps<SVGAElement>>;
-}[];
+};
 
-export const logos: Logos = [
+export const logos = [
   {
     Name: "tailwind",
     Icon: Tailwindcss,
@@ -51,10 +51,4 @@ export const logos: Logos = [
     Name: "nodejs",
     Icon: NodeJS,
   },
-];
-
-export const builds = [
-  {
-    
-  }
-]
+] satisfies Logo[];
