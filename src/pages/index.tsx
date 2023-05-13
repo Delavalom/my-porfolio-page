@@ -17,7 +17,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   intro,
 }) => {
   return (
-    <main className="w-full h-full">
+    <main className="w-full h-full overflow-y-auto">
       <main className="bg-dots flex flex-col justify-start items-center w-full h-full bg-white">
         <HeaderBar title="About Me" Cta={<EmojiBtn />} />
         <section className="w-full flex flex-col px-2">
